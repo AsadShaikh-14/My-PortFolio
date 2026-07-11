@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asad.ai | Robotics & Automation Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#060913',
+                        cardDark: '#0d1122',
+                        neonBlue: '#3b82f6',
+                        neonPurple: '#8b5cf6',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #060913; }
+        .purple-splash {
+            background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(0,0,0,0) 70%);
+        }
+        .node-line {
+            stroke: rgba(255,255,255,0.1);
+            stroke-width: 2;
+        }
+        .node-circle {
+            fill: #0d1122;
+            stroke: #3b82f6;
+            stroke-width: 3;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .node-circle:hover {
+            fill: #3b82f6;
+            box-shadow: 0 0 15px #3b82f6;
+        }
+    </style>
+</head>
+<body class="text-gray-200 overflow-x-hidden font-sans">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-midnight/80 backdrop-blur-md border-b border-gray-900 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-tech text-lg font-bold tracking-tight text-white">Asad<span class="text-neonPurple">.ai</span></a>
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-wide text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About me</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#certificates" class="hover:text-white transition-colors">Certificates</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact me</a>
+            </div>
+            <a href="mailto:mohammedasad1613@gmail.com" class="text-xs bg-gray-950 border border-gray-800 hover:border-neonBlue px-4 py-2 rounded-full transition-all text-gray-300">Let's talk</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center pt-24 px-6 max-w-6xl mx-auto relative">
+        <div class="grid md:grid-cols-12 gap-12 items-center w-full z-10">
+            <div class="md:col-span-7 space-y-6">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-none text-white">
+                    Hi, I am <br><span class="text-neonBlue font-tech font-bold">{MOHAMMED ASAD ILIAS SHAIKH}</span>
+                </h1>
+                <p class="text-gray-400 max-w-md text-sm md:text-base leading-relaxed">
+                    Entry-level Robotics and Automation Engineering graduate with hands-on project experience in autonomous navigation, robotic manipulation, and AI-driven computer vision.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="Asad Rsume IND.pdf" target="_blank" class="px-6 py-3 bg-neonBlue hover:bg-blue-600 text-white rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-lg shadow-blue-500/10">
+                        Download CV
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-cardDark border border-gray-800 hover:border-gray-700 text-white rounded-lg font-semibold text-xs tracking-wider uppercase transition-all">
+                        Project
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 flex justify-center relative">
+                <div class="absolute inset-0 purple-splash rounded-full scale-110 pointer-events-none animate-pulse"></div>
+                <div class="w-80 h-80 bg-neonPurple/40 rounded-full mix-blend-screen filter blur-xl absolute opacity-70"></div>
+                <img src="https://via.placeholder.com/400x400" alt="MOHAMMED ASAD ILIAS SHAIKH" class="w-72 h-72 object-cover relative z-10 border-4 border-neonPurple/20 rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center space-y-2 mb-12">
+            <h2 class="text-3xl font-bold font-tech text-white">About me</h2>
+        </div>
+        
+        <div class="w-full bg-[#090d1a] border border-gray-800/80 rounded-xl overflow-hidden shadow-2xl">
+            <div class="bg-[#0b0f22] px-4 py-3 border-b border-gray-900 flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+                <span class="text-[11px] text-gray-500 font-mono pl-4">profile_manifest.py</span>
+            </div>
+            <div class="p-6 font-mono text-xs md:text-sm text-gray-400 space-y-4 leading-relaxed">
+                <p><span class="text-neonPurple">&gt; introducing_myself:</span></p>
+                <p class="pl-4">
+                    Passionate Robotics and Automation Engineering graduate with proven experience designing intelligent hardware systems, implementing autonomous navigation, and building AI-driven computer vision solutions. Adept at physical CAD design, kinematic simulation, and hardware-software integration.
+                </p>
+                <p><span class="text-neonBlue">&gt; academics:</span></p>
+                <p class="pl-4 text-xs">
+                    • Bachelor of Engineering (B.E.) in Robotics and Automation Engineering | Sahyadri College of Engineering and Management (Graduation: 2026) | <span class="text-emerald-400">CGPA: 8.44</span><br>
+                    • Pre-University Education | St Aloysius PUC (Completed: 2022)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="border-l-2 border-neonBlue pl-4 mb-12">
+            <h2 class="text-2xl font-bold font-tech text-white">My Skills</h2>
+            <p class="text-xs text-gray-500">Click on any network node map layout to view core technical competencies.</p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7 bg-[#090d1a] border border-gray-900 rounded-xl p-4 flex justify-center items-center">
+                <svg width="400" height="300" viewBox="0 0 400 300" class="w-full h-auto">
+                    <line x1="50" y1="150" x2="150" y2="70" class="node-line" />
+                    <line x1="50" y1="150" x2="150" y2="220" class="node-line" />
+                    <line x1="150" y1="70" x2="280" y2="70" class="node-line" />
+                    <line x1="150" y1="220" x2="280" y2="220" class="node-line" />
+                    <line x1="280" y1="70" x2="350" y2="150" class="node-line" />
+                    <line x1="280" y1="220" x2="350" y2="150" class="node-line" />
+                    
+                    <circle cx="50" cy="150" r="14" class="node-circle" onclick="showSkill('Robotics & Simulation', 'CoppeliaSim, Gazebo, Kinematics, Path Planning')" />
+                    <circle cx="150" cy="70" r="14" class="node-circle" style="stroke:#8b5cf6;" onclick="showSkill('AI & Computer Vision', 'OpenCV, LLM Integration (Ollama, LangChain)')" />
+                    <circle cx="150" cy="220" r="14" class="node-circle" onclick="showSkill('CAD & Hardware', 'SolidWorks, Fusion 360, 3D Printing, Prototyping')" />
+                    <circle cx="280" cy="70" r="14" class="node-circle" onclick="showSkill('Embedded Systems', 'Python, Arduino, Raspberry Pi, Software Debugging')" />
+                    <circle cx="280" cy="220" r="14" class="node-circle" style="stroke:#8b5cf6;" onclick="showSkill('Automation Stack', 'Microsoft Power Apps, Power Automate, SharePoint')" />
+                    <circle cx="350" cy="150" r="14" class="node-circle" onclick="showSkill('Core Engineering Math', 'Forward & Inverse Kinematics Analysis, Space Navigation Dynamics')" />
+                </svg>
+            </div>
+
+            <div class="md:col-span-5 bg-cardDark p-8 rounded-xl border border-gray-800 text-center space-y-4">
+                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">Interactive Diagnostic Node</span>
+                <h3 id="skill-title" class="text-xl font-bold font-tech text-white">Robotics & Simulation</h3>
+                <p id="skill-details" class="text-xs text-gray-400 font-mono leading-relaxed">
+                    CoppeliaSim, Gazebo, Kinematics, Path Planning
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="border-l-2 border-neonPurple pl-4 mb-12">
+            <h2 class="text-2xl font-bold font-tech text-white">Projects</h2>
+            <p class="text-xs text-gray-500">Engineering documentation verified across simulations and deployed hardware stacks.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                <img src="https://via.placeholder.com/600x350" alt="Automated Fish Sorting System" class="w-full h-48 object-cover">
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">Automated Fish Sorting System Using Computer Vision & AI</h3>
+                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
+                        <li>Co-developed an AI machine leveraging integrated real-time computer vision algorithms for completely automated, time-efficient aquaculture processing.</li>
+                        <li>Programmed custom object detection and classification scripts configured for localized deployment on an embedded Raspberry Pi platform.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+                        <span>#Python</span><span>#OpenCV</span><span>#CoppeliaSim</span><span>#RaspberryPi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                <img src="https://via.placeholder.com/600x350" alt="Language-Guided Navigator" class="w-full h-48 object-cover">
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">Language-Guided Navigator for Autonomous Path Planning</h3>
+                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
+                        <li>Engineered an autonomous software agent that processes natural language instructions into execute-ready navigation paths within simulated robotics spaces.</li>
+                        <li>Integrated local Large Language Models via Ollama with CoppeliaSim to successfully map complex, multi-step natural human intent to direct robot operations.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+                        <span>#Python</span><span>#Ollama</span><span>#LangChain</span><span>#CoppeliaSim</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                <img src="https://via.placeholder.com/600x350" alt="SCARA Robotic Arm" class="w-full h-48 object-cover">
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">SCARA Robotic Arm Manipulator for Kinematics & Control</h3>
+                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
+                        <li>Formulated and programmed the exact mathematical forward and inverse kinematics algorithms to achieve ultra-precise trajectories.</li>
+                        <li>Synchronized simulated kinematic path nodes smoothly with micro-controlled Arduino hardware systems to optimize pick-and-place precision.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+                        <span>#Python</span><span>#CoppeliaSim</span><span>#ArduinoHardware</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                <img src="https://via.placeholder.com/600x350" alt="Hotel Booking Management" class="w-full h-48 object-cover">
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">Hotel Booking Management for Cloud Software Automation</h3>
+                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
+                        <li>Designed and deployed responsive data portals containing automated multi-level database approvals and deep-linked email reminders.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+                        <span>#PowerApps</span><span>#PowerAutomate</span><span>#SharePoint</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="border-l-2 border-neonBlue pl-4 mb-12">
+            <h2 class="text-2xl font-bold font-tech text-white">Work Experience</h2>
+        </div>
+
+        <div class="space-y-12 font-sans">
+            <div class="border-l border-gray-800 pl-6 relative space-y-2">
+                <div class="absolute w-3 h-3 bg-neonBlue rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
+                <div class="flex flex-wrap justify-between items-center text-sm">
+                    <h3 class="text-lg font-bold text-white">Novigo Solutions</h3>
+                    <span class="text-xs font-mono text-gray-500">Jan 2026 - Apr 2026 | Mangaluru, India</span>
+                </div>
+                <p class="text-xs font-medium text-neonPurple uppercase tracking-wider font-tech">Power Apps Intern</p>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Developed tailored business tools using Microsoft Power Apps and cloud environments to streamline operational processes.
+                </p>
+            </div>
+
+            <div class="border-l border-gray-800 pl-6 relative space-y-2">
+                <div class="absolute w-3 h-3 bg-neonPurple rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
+                <div class="flex flex-wrap justify-between items-center text-sm">
+                    <h3 class="text-lg font-bold text-white">Oasis Infobyte</h3>
+                    <span class="text-xs font-mono text-gray-500">Aug 2025 - Sept 2025 | Remote</span>
+                </div>
+                <p class="text-xs font-medium text-neonBlue uppercase tracking-wider font-tech">Python Programming Intern</p>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Completed core software engineering debugging loops and handled algorithmic code modules.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div class="space-y-6">
+            <div class="border-l-2 border-neonBlue pl-4">
+                <h2 class="text-xl font-bold font-tech text-white">Certifications</h2>
+            </div>
+            <div class="grid gap-4">
+                <div class="bg-cardDark border border-gray-900 p-4 rounded-xl flex items-center space-x-4">
+                    <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonBlue">
+                        <i class="fa-solid fa-award text-lg"></i>
+                    </div>
+                    <span class="text-sm text-gray-300 font-medium">Automotive Industrial Engineering</span>
+                </div>
+                <div class="bg-cardDark border border-gray-900 p-4 rounded-xl flex items-center space-x-4">
+                    <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonPurple">
+                        <i class="fa-solid fa-award text-lg"></i>
+                    </div>
+                    <span class="text-sm text-gray-300 font-medium">CASPRO Sheet Metal Design Mastery</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="border-l-2 border-neonPurple pl-4">
+                <h2 class="text-xl font-bold font-tech text-white">Hobbies & Research Focus</h2>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-futbol mr-2 text-neonBlue"></i>Football</span>
+                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-medal mr-2 text-neonPurple"></i>Sports</span>
+                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-book mr-2 text-neonBlue"></i>Reading Novels</span>
+                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-microchip mr-2 text-neonPurple"></i>Technical Research</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 border-t border-gray-950 px-6 max-w-6xl mx-auto text-center space-y-6 relative z-10">
+        <h3 class="text-2xl font-bold font-tech text-white">Let's start something great together</h3>
+        
+        <div class="max-w-md mx-auto space-y-3 font-mono text-xs text-gray-400 bg-cardDark/60 p-6 rounded-2xl border border-gray-900">
+            <p><i class="fa-solid fa-envelope text-neonBlue mr-2"></i> mohammedasad1613@gmail.com</p>
+            <p><i class="fa-solid fa-phone text-neonPurple mr-2"></i> +91-8217394879</p>
+            <p><i class="fa-solid fa-location-dot text-neonBlue mr-2"></i> Mangaluru, Karnataka, India</p>
+            <div class="flex justify-center space-x-4 pt-4 border-t border-gray-900 mt-4">
+                <a href="https://linkedin.com/in/mohammed-asad-ilias-shaikh-98277b26a" target="_blank" class="text-gray-500 hover:text-white transition-colors text-base"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://grabead.com/mohammed.asad.ilias.shaikh-" target="_blank" class="text-gray-500 hover:text-white transition-colors text-base"><i class="fa-solid fa-cubes"></i></a>
+            </div>
+        </div>
+
+        <a href="mailto:mohammedasad1613@gmail.com" class="inline-block px-8 py-3 bg-neonBlue hover:bg-blue-600 font-bold font-tech text-xs tracking-widest text-white rounded-lg transition-all uppercase shadow-md">
+            Get in touch
+        </a>
+        <p class="text-xs text-gray-600 font-mono pt-8">&copy; 2026 Mohammed Asad Ilias Shaikh. Executed via pure atomic code parameters.</p>
+    </footer>
+
+    <script>
+        function showSkill(name, details) {
+            document.getElementById('skill-title').innerText = name;
+            document.getElementById('skill-details').innerText = details;
+        }
+    </script>
+</body>
+</html>
