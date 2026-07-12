@@ -1,313 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asad.ai | Robotics & Automation Engineering Portfolio</title>
-    <!-- Standalone Tailwind CSS Engine -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Asad Ilias Shaikh | Robotics &amp; Automation Engineer</title>
+<meta name="description" content="Portfolio of Mohammed Asad Ilias Shaikh — Robotics and Automation Engineer specializing in autonomous navigation, computer vision, and hardware-software integration.">
+<meta name="theme-color" content="#060913">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mohammed Asad Ilias Shaikh | Robotics & Automation Engineer">
+<meta property="og:description" content="Autonomous navigation, computer vision, and hardware-software integration — a robotics engineering portfolio.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="Asadpro.jpg">
+
+<!-- Favicon: inline circuit-node glyph, no external asset required -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23060913'/%3E%3Ccircle cx='9' cy='16' r='3' fill='none' stroke='%233b82f6' stroke-width='2'/%3E%3Ccircle cx='23' cy='9' r='3' fill='none' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='23' cy='23' r='3' fill='none' stroke='%233b82f6' stroke-width='2'/%3E%3Cpath d='M12 16H20M21 11L14 15M21 21L14 17' stroke='%234b5563' stroke-width='1.4'/%3E%3C/svg%3E">
+
+<!-- Static, precompiled Tailwind (v2) for layout utilities only — plain CSS, no JS/eval involved -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        midnight: '#060913',
-                        cardDark: '#0d1122',
-                        neonBlue: '#3b82f6',
-                        neonPurple: '#8b5cf6',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        tech: ['Space Grotesk', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #060913; }
-        .purple-splash {
-            background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(0,0,0,0) 70%);
-        }
-        .node-line {
-            stroke: rgba(255,255,255,0.1);
-            stroke-width: 2;
-        }
-        .node-circle {
-            fill: #0d1122;
-            stroke: #3b82f6;
-            stroke-width: 3;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .node-circle:hover {
-            fill: #3b82f6;
-            box-shadow: 0 0 15px #3b82f6;
-        }
-    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  html, body{ background:#060913; color:#e5e7eb; }
+  h1,h2,h3{ color:#ffffff; }
+  a{ color:inherit; }
+
+  .font-tech{ font-family:'Space Grotesk', sans-serif; }
+  .font-mono{ font-family:'JetBrains Mono', monospace; }
+
+  .bg-midnight{ background-color:#060913; }
+  .bg-midnight-80{ background-color:rgba(6,9,19,0.8); }
+  .bg-cardDark{ background-color:#0d1122; }
+  .bg-cardDark-60{ background-color:rgba(13,17,34,0.6); }
+  .bg-cardDark-80{ background-color:rgba(13,17,34,0.8); }
+  .bg-neonBlue{ background-color:#3b82f6; }
+  .bg-neonPurple{ background-color:#8b5cf6; }
+  .bg-neonPurple-40{ background-color:rgba(139,92,246,0.4); }
+  .bg-black-70{ background-color:rgba(0,0,0,0.7); }
+  .bg-red-500-70{ background-color:rgba(239,68,68,0.7); }
+  .bg-yellow-500-70{ background-color:rgba(234,179,8,0.7); }
+  .bg-green-500-70{ background-color:rgba(34,197,94,0.7); }
+
+  .text-neonBlue{ color:#3b82f6; }
+  .text-neonPurple{ color:#8b5cf6; }
+
+  .border-midnight{ border-color:#060913; }
+  .border-neonBlue{ border-color:#3b82f6; }
+  .border-neonPurple{ border-color:#8b5cf6; }
+  .border-neonPurple-20{ border-color:rgba(139,92,246,0.2); }
+  .hover\:border-neonBlue:hover{ border-color:#3b82f6; }
+  .focus\:border-neonBlue:focus{ border-color:#3b82f6; }
+  .hover\:bg-blue-600:hover{ background-color:#2563eb; }
+
+  .shadow-glowBlue{ box-shadow:0 0 25px rgba(59,130,246,0.25); }
+  .shadow-glowPurple{ box-shadow:0 0 25px rgba(139,92,246,0.25); }
+  .shadow-blue-500-10{ box-shadow:0 10px 15px -3px rgba(59,130,246,0.1); }
+</style>
+
+<style>
+  :root{ --scroll: 0%; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  body{ background-color:#060913; color:#d1d5db; font-size:16px; line-height:1.6; }
+
+  [class~="bg-midnight"]{ background-color:#060913 !important; }
+  [class~="bg-midnight-80"]{ background-color:rgba(6,9,19,0.8) !important; }
+  [class~="bg-cardDark"]{ background-color:#0d1122 !important; }
+  [class~="bg-cardDark-60"]{ background-color:rgba(13,17,34,0.6) !important; }
+  [class~="bg-cardDark-80"]{ background-color:rgba(13,17,34,0.8) !important; }
+  [class~="bg-neonBlue"]{ background-color:#3b82f6 !important; }
+  [class~="bg-neonPurple"]{ background-color:#8b5cf6 !important; }
+  [class~="bg-neonPurple-40"]{ background-color:rgba(139,92,246,0.4) !important; }
+  [class~="text-neonBlue"]{ color:#3b82f6 !important; }
+  [class~="text-neonPurple"]{ color:#8b5cf6 !important; }
+  [class~="text-white"]{ color:#ffffff !important; }
+  [class~="border-midnight"]{ border-color:#060913 !important; }
+  [class~="border-neonBlue"]{ border-color:#3b82f6 !important; }
+  [class~="border-neonPurple"]{ border-color:#8b5cf6 !important; }
+  [class~="border-neonPurple-20"]{ border-color:rgba(139,92,246,0.2) !important; }
+  [class~="hover:border-neonBlue"]:hover{ border-color:#3b82f6 !important; }
+  [class~="focus:border-neonBlue"]:focus{ border-color:#3b82f6 !important; }
+  [class~="shadow-glowBlue"]{ box-shadow:0 0 25px rgba(59,130,246,0.25) !important; }
+  [class~="shadow-glowPurple"]{ box-shadow:0 0 25px rgba(139,92,246,0.25) !important; }
+  [class~="text-[9px]"]{ font-size:9px !important; }
+  [class~="text-[10px]"]{ font-size:10px !important; }
+  [class~="text-[11px]"]{ font-size:11px !important; }
+  [class~="-left-[7px]"]{ left:-7px !important; }
+  main section{ max-width:56rem; margin:0 auto; padding:3rem 1.25rem; }
+  img{ max-width:100%; height:auto; border-radius:0.5rem; }
+  a{ color:#93c5fd; }
+  h1,h2,h3{ color:#ffffff; }
+
+  .console{
+    background: #090d1a;
+    border: 1px solid rgba(139, 92, 246, 0.15) !important;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .console-bar{
+    background: #0b0f22;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    padding: 0.7rem 1rem;
+    display:flex; align-items:center; gap:0.5rem;
+  }
+  .dot{ width:0.65rem; height:0.65rem; border-radius:9999px; }
+
+  /* True 3D Mathematics Space Canvas Backdrop Configuration */
+  #three-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .purple-splash{ background: radial-gradient(circle, rgba(139,92,246,0.22) 0%, rgba(0,0,0,0) 70%); }
+
+  #scroll-progress{
+    position: fixed; top:0; left:0; height:3px; z-index:60;
+    width: var(--scroll);
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 0.1s linear;
+  }
+
+  /* Interactive Network Parameters */
+  .node-line{ stroke: rgba(139, 92, 246, 0.25); stroke-width: 1.6; }
+  .node-circle{ fill:#0d1122; stroke:#3b82f6; stroke-width:3; transition: all .25s ease; cursor:pointer; }
+  .node-circle:hover, .node-circle:focus, .node-circle[data-active="true"]{ fill:#3b82f6; stroke:#3b82f6; filter: drop-shadow(0 0 10px rgba(59,130,246,0.8)); outline:none; }
+  .node-circle.purple{ stroke:#8b5cf6; }
+  .node-circle.purple:hover, .node-circle.purple:focus, .node-circle.purple[data-active="true"]{ fill:#8b5cf6; stroke:#8b5cf6; filter: drop-shadow(0 0 10px rgba(139,92,246,0.8)); }
+  .node-label{ fill:#9ca3af; font-size:9px; font-family:'JetBrains Mono', monospace; pointer-events:none; }
+
+  .reveal{ opacity:1; transform:none; }
+  .reveal.js-enabled{ opacity:0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.js-enabled.in-view{ opacity:1; transform:none; }
+
+  .nav-link{ position:relative; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:#8b5cf6; transition: width .25s ease; }
+  .nav-link.active{ color:#fff; }
+  .nav-link.active::after{ width:100%; }
+
+  .pulse-dot{ width:8px; height:8px; border-radius:9999px; background:#22c55e; box-shadow:0 0 0 rgba(34,197,94,0.6); animation:pulseDot 2s infinite; }
+  @keyframes pulseDot{
+    0%{ box-shadow:0 0 0 0 rgba(34,197,94,0.55);}
+    70%{ box-shadow:0 0 0 8px rgba(34,197,94,0);}
+    100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);}
+  }
+
+  .caret{ display:inline-block; width:2px; background:#3b82f6; margin-left:2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .filter-btn{ transition: all .2s ease; }
+  .filter-btn.active{ background:#8b5cf6; color:#fff; border-color:#8b5cf6; }
+
+  #project-modal{ backdrop-filter: blur(6px); }
+
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible, .node-circle:focus-visible{
+    outline: 2px solid #8b5cf6; outline-offset: 3px; border-radius:4px;
+  }
+
+  #back-to-top{ opacity:0; pointer-events:none; transition: opacity .3s ease, transform .3s ease; transform: translateY(10px); }
+  #back-to-top.show{ opacity:1; pointer-events:auto; transform:none; }
+
+  #toast{ opacity:0; transition: opacity .3s ease, transform .3s ease; transform: translateY(8px); }
+  #toast.show{ opacity:1; transform:none; }
+
+  ::selection{ background:#8b5cf6; color:#fff; }
+
+  #main{ perspective: 1400px; }
+  .console{
+    transform-style: preserve-3d;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.04) inset,
+      0 -1px 0 rgba(0,0,0,0.5) inset,
+      0 24px 50px -22px rgba(0,0,0,0.65);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .console:hover {
+    border-color: rgba(139, 92, 246, 0.45) !important;
+  }
+  .project-card, .tilt-card{
+    transform-style: preserve-3d;
+    transition: transform .18s ease, box-shadow .25s ease, border-color 0.25s ease;
+    will-change: transform;
+  }
+  .project-card:hover, .tilt-card:hover{
+    border-color: rgba(139, 92, 246, 0.45) !important;
+    box-shadow: 0 30px 60px -24px rgba(139,92,246,0.25), 0 24px 50px -22px rgba(0,0,0,0.7);
+  }
+  #project-grid{ perspective: 1300px; }
+
+  .press-3d{
+    box-shadow: 0 4px 0 rgba(0,0,0,0.35), 0 10px 22px -8px rgba(139,92,246,0.35);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .press-3d:hover{ transform: translateY(-2px); }
+  .press-3d:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.35), 0 4px 10px -6px rgba(139,92,246,0.35);
+  }
+
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#060913; }
+  ::-webkit-scrollbar-thumb{ background:#1c2540; border-radius:8px; }
+  ::-webkit-scrollbar-thumb:hover{ background:#8b5cf6; }
+</style>
 </head>
-<body class="text-gray-200 overflow-x-hidden font-sans">
 
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-midnight/80 backdrop-blur-md border-b border-gray-900 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="font-tech text-lg font-bold tracking-tight text-white">Asad<span class="text-neonPurple">.ai</span></a>
-            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-wide text-gray-400">
-                <a href="#about" class="hover:text-white transition-colors">About me</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#certificates" class="hover:text-white transition-colors">Certificates</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact me</a>
-            </div>
-            <a href="mailto:mohammedasad1613@gmail.com" class="text-xs bg-gray-950 border border-gray-800 hover:border-neonBlue px-4 py-2 rounded-full transition-all text-gray-300">Let's talk</a>
-        </div>
-    </nav>
+<body class="text-gray-200 overflow-x-hidden font-sans antialiased">
 
-    <section class="min-h-screen flex items-center justify-center pt-24 px-6 max-w-6xl mx-auto relative">
-        <div class="grid md:grid-cols-12 gap-12 items-center w-full z-10">
-            <div class="md:col-span-7 space-y-6">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-none text-white">
-                    Hi, I am <br><span class="text-neonBlue font-tech font-bold">MOHAMMED ASAD ILIAS SHAIKH</span>
-                </h1>
-                <p class="text-gray-400 max-w-md text-sm md:text-base leading-relaxed">
-                    Passionate Robotics and Automation Engineering graduate with proven experience designing intelligent hardware systems, implementing autonomous navigation, and building AI-driven computer vision solutions. Adept at physical CAD design, kinematic simulation, and hardware-software integration.
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="Asad Rsume IND.pdf" target="_blank" class="px-6 py-3 bg-neonBlue hover:bg-blue-600 text-white rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-lg shadow-blue-500/10">
-                        Download CV
-                    </a>
-                    <a href="#contact" class="px-6 py-3 bg-cardDark border border-gray-800 hover:border-gray-700 text-white rounded-lg font-semibold text-xs tracking-wider uppercase transition-all">
-                        Project
-                    </a>
-                </div>
-            </div>
-            
-            <div class="md:col-span-5 flex justify-center relative">
-                <div class="absolute inset-0 purple-splash rounded-full scale-110 pointer-events-none animate-pulse"></div>
-                <div class="w-80 h-80 bg-neonPurple/40 rounded-full mix-blend-screen filter blur-xl absolute opacity-70"></div>
-                <img src="Asadpro.jpg" alt="MOHAMMED ASAD ILIAS SHAIKH" class="w-72 h-72 object-cover relative z-10 border-4 border-neonPurple/20 rounded-2xl shadow-2xl">
-            </div>
-        </div>
-    </section>
+<!-- Native high-performance 3D canvas backdrop layout layer -->
+<canvas id="three-bg-canvas"></canvas>
 
-    <section id="about" class="py-24 px-6 max-w-4xl mx-auto">
-        <div class="text-center space-y-2 mb-12">
-            <h2 class="text-3xl font-bold font-tech text-white">About Me</h2>
-        </div>
-        
-        <div class="w-full bg-[#090d1a] border border-gray-800/80 rounded-xl overflow-hidden shadow-2xl">
-            <div class="bg-[#0b0f22] px-4 py-3 border-b border-gray-900 flex items-center space-x-2">
-                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
-                <span class="text-[11px] text-gray-500 font-mono pl-4">INTRODUCTION</span>
-            </div>
-            <div class="p-6 font-mono text-xs md:text-sm text-gray-400 space-y-4 leading-relaxed">
-                <p><span class="text-neonPurple">&gt; Introducing myself:</span></p>
-                <p class="pl-4">
-                    Passionate Robotics and Automation Engineering graduate with proven experience designing intelligent hardware systems, implementing autonomous navigation, and building AI-driven computer vision solutions. Adept at physical CAD design, kinematic simulation, and hardware-software integration.
-                </p>
-                <p><span class="text-neonBlue">&gt; Academics:</span></p>
-                <p class="pl-4 text-xs">
-                    • Bachelor of Engineering (B.E.) in Robotics and Automation Engineering | Sahyadri College of Engineering and Management (Graduation: 2026) | <span class="text-emerald-400">CGPA: 8.44</span><br>
-                    • Pre-University Education | St Aloysius PUC (Completed: 2022)
-                </p>
-            </div>
-        </div>
-    </section>
+<div id="scroll-progress" aria-hidden="true"></div>
 
-    <section id="skills" class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="border-l-2 border-neonBlue pl-4 mb-12">
-            <h2 class="text-2xl font-bold font-tech text-white">My Skills</h2>
-            <p class="text-xs text-gray-500">Click on any network node map layout to view core technical competencies.</p>
-        </div>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] bg-neonPurple text-white text-xs px-3 py-2 rounded">Skip to content</a>
 
-        <div class="grid md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-7 bg-[#090d1a] border border-gray-900 rounded-xl p-4 flex justify-center items-center">
-                <svg width="400" height="300" viewBox="0 0 400 300" class="w-full h-auto">
-                    <line x1="50" y1="150" x2="150" y2="70" class="node-line" />
-                    <line x1="50" y1="150" x2="150" y2="220" class="node-line" />
-                    <line x1="150" y1="70" x2="280" y2="70" class="node-line" />
-                    <line x1="150" y1="220" x2="280" y2="220" class="node-line" />
-                    <line x1="280" y1="70" x2="350" y2="150" class="node-line" />
-                    <line x1="280" y1="220" x2="350" y2="150" class="node-line" />
-                    
-                    <circle cx="50" cy="150" r="14" class="node-circle" onclick="showSkill('Robotics & Simulation', 'CoppeliaSim, Gazebo, Kinematics, Path Planning')" />
-                    <circle cx="150" cy="70" r="14" class="node-circle" style="stroke:#8b5cf6;" onclick="showSkill('AI & Computer Vision', 'OpenCV, LLM Integration (Ollama, LangChain)')" />
-                    <circle cx="150" cy="220" r="14" class="node-circle" onclick="showSkill('CAD & Hardware', 'SolidWorks, Fusion 360, 3D Printing, Prototyping')" />
-                    <circle cx="280" cy="70" r="14" class="node-circle" onclick="showSkill('Embedded Systems', 'Python, Arduino, Raspberry Pi, Software Debugging')" />
-                    <circle cx="280" cy="220" r="14" class="node-circle" style="stroke:#8b5cf6;" onclick="showSkill('Automation Stack', 'Microsoft Power Apps, Power Automate, SharePoint')" />
-                    <circle cx="350" cy="150" r="14" class="node-circle" onclick="showSkill('Core Engineering Math', 'Forward & Inverse Kinematics Analysis, Space Navigation Dynamics')" />
-                </svg>
-            </div>
+<!-- Global Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-midnight-80 backdrop-blur-md border-b border-gray-900 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="#" class="font-tech text-lg font-bold tracking-tight text-white"><i class="fa-solid fa-robot text-neonBlue mr-2"></i>Asad<span class="text-neonPurple">.ai</span></a>
 
-            <div class="md:col-span-5 bg-cardDark p-8 rounded-xl border border-gray-800 text-center space-y-4">
-                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">My Skills</span>
-                <h3 id="skill-title" class="text-xl font-bold font-tech text-white">Robotics & Simulation</h3>
-                <p id="skill-details" class="text-xs text-gray-400 font-mono leading-relaxed">
-                    CoppeliaSim, Gazebo, Kinematics, Path Planning
-                </p>
-            </div>
-        </div>
-    </section>
+    <div class="hidden md:flex items-center space-x-8 text-xs font-medium tracking-wide text-gray-400" id="nav-links">
+      <a href="#about" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-user-gear mr-1.5 text-xs"></i>About</a>
+      <a href="#skills" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-network-wired mr-1.5 text-xs"></i>Skills</a>
+      <a href="#projects" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-microchip mr-1.5 text-xs"></i>Projects</a>
+      <a href="#experience" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-briefcase mr-1.5 text-xs"></i>Experience</a>
+      <a href="#certificates" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-file-signature mr-1.5 text-xs"></i>Certificates</a>
+      <a href="#contact" class="nav-link hover:text-white transition-colors"><i class="fa-solid fa-terminal mr-1.5 text-xs"></i>Contact</a>
+    </div>
 
-    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="border-l-2 border-neonPurple pl-4 mb-12">
-            <h2 class="text-2xl font-bold font-tech text-white">Projects</h2>
-            <p class="text-xs text-gray-500">Engineering documentation verified across simulations and deployed hardware stacks.</p>
-        </div>
+    <div class="flex items-center gap-3">
+      <a href="mailto:mohammedasad1613@gmail.com" class="hidden sm:inline-block text-xs bg-gray-950 border border-gray-800 hover:border-neonPurple px-4 py-2 rounded-full transition-all text-gray-300"><i class="fa-solid fa-paper-plane mr-1.5"></i>Let's talk</a>
+      <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden w-9 h-9 flex items-center justify-center border border-gray-800 rounded-lg text-gray-300">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
-                <img src="fishsorting.png" alt="Automated Fish Sorting System" class="w-full h-48 object-cover">
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">Automated Fish Sorting System Using Computer Vision & AI</h3>
-                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
-                        <li>Co-developed an AI machine leveraging integrated real-time computer vision algorithms for completely automated, time-efficient aquaculture processing.</li>
-                        <li>Programmed custom object detection and classification scripts configured for localized deployment on an embedded Raspberry Pi platform.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
-                        <span>#Python</span><span>#OpenCV</span><span>#CoppeliaSim</span><span>#RaspberryPi</span>
-                    </div>
-                </div>
-            </div>
+  <div id="mobile-menu" class="md:hidden hidden flex-col mt-4 space-y-4 text-sm font-medium text-gray-300 px-2 pb-2">
+    <a href="#about" class="mobile-link"><i class="fa-solid fa-user-gear mr-2 text-neonBlue"></i>About</a>
+    <a href="#skills" class="mobile-link"><i class="fa-solid fa-network-wired mr-2 text-neonPurple"></i>Skills</a>
+    <a href="#projects" class="mobile-link"><i class="fa-solid fa-microchip mr-2 text-neonBlue"></i>Projects</a>
+    <a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase mr-2 text-neonPurple"></i>Experience</a>
+    <a href="#certificates" class="mobile-link"><i class="fa-solid fa-file-signature mr-2 text-neonBlue"></i>Certificates</a>
+    <a href="#contact" class="mobile-link"><i class="fa-solid fa-terminal mr-2 text-neonPurple"></i>Contact</a>
+  </div>
+</nav>
 
-            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
-                <img src="llmrobo.png" alt="Language-Guided Navigator" class="w-full h-48 object-cover">
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">Language-Guided Navigator for Autonomous Path Planning</h3>
-                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
-                        <li>Engineered an autonomous software agent that processes natural language instructions into execute-ready navigation paths within simulated robotics spaces.</li>
-                        <li>Integrated local Large Language Models via Ollama with CoppeliaSim to successfully map complex, multi-step natural human intent to direct robot operations.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
-                        <span>#Python</span><span>#Ollama</span><span>#LangChain</span><span>#CoppeliaSim</span>
-                    </div>
-                </div>
-            </div>
+<main id="main">
 
-            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
-                <img src="Scara.png" alt="SCARA Robotic Arm" class="w-full h-48 object-cover">
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">SCARA Robotic Arm Manipulator for Kinematics & Control</h3>
-                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
-                        <li>Formulated and programmed the exact mathematical forward and inverse kinematics algorithms to achieve ultra-precise trajectories.</li>
-                        <li>Synchronized simulated kinematic path nodes smoothly with micro-controlled Arduino hardware systems to optimize pick-and-place precision.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
-                        <span>#Python</span><span>#CoppeliaSim</span><span>#ArduinoHardware</span>
-                    </div>
-                </div>
-            </div>
+<!-- HERO SECTION -->
+<section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6 max-w-6xl mx-auto relative">
+  <div class="grid md:grid-cols-12 gap-12 items-center w-full z-10">
+    <div class="md:col-span-7 space-y-6">
 
-            <div class="bg-cardDark border border-gray-900 hover:border-gray-800/80 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
-                <img src="hotelmanage.png" alt="Hotel Booking Management" class="w-full h-48 object-cover">
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">Hotel Booking Management for Cloud Software Automation</h3>
-                    <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1">
-                        <li>Designed and deployed responsive data portals containing automated multi-level database approvals and deep-linked email reminders.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
-                        <span>#PowerApps</span><span>#PowerAutomate</span><span>#SharePoint</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="inline-flex items-center gap-2 bg-cardDark-80 border border-gray-800 rounded-full px-3 py-1.5 text-[10px] font-mono text-gray-400">
+        <span class="pulse-dot"></span> SYSTEM STATUS: OPEN TO OPPORTUNITIES
+      </div>
 
-    <section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
-        <div class="border-l-2 border-neonBlue pl-4 mb-12">
-            <h2 class="text-2xl font-bold font-tech text-white">Work Experience</h2>
-        </div>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-none text-white">
+        Hi, I am <br><span class="text-neonBlue font-tech font-bold">MOHAMMED ASAD ILIAS SHAIKH</span>
+      </h1>
 
-        <div class="space-y-12 font-sans">
-            <div class="border-l border-gray-800 pl-6 relative space-y-2">
-                <div class="absolute w-3 h-3 bg-neonBlue rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
-                <div class="flex flex-wrap justify-between items-center text-sm">
-                    <h3 class="text-lg font-bold text-white">Novigo Solutions</h3>
-                    <span class="text-xs font-mono text-gray-500">Jan 2026 - Apr 2026 | Mangaluru, India</span>
-                </div>
-                <p class="text-xs font-medium text-neonPurple uppercase tracking-wider font-tech">Power Apps Intern</p>
-                <p class="text-xs text-gray-400 leading-relaxed">
-                    Completed an internship at Novigo Solutions, focusing on developing business applications using Microsoft PowerApps and Power Automate. Gaining hands-on experience in automation, data integration, and real-world application development.
-                </p>
-            </div>
+      <p class="font-mono text-sm md:text-base text-neonPurple h-6" id="typewriter" aria-live="polite"></p>
 
-            <div class="border-l border-gray-800 pl-6 relative space-y-2">
-                <div class="absolute w-3 h-3 bg-neonPurple rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
-                <div class="flex flex-wrap justify-between items-center text-sm">
-                    <h3 class="text-lg font-bold text-white">Oasis Infobyte</h3>
-                    <span class="text-xs font-mono text-gray-500">Aug 2025 - Sept 2025 | Remote</span>
-                </div>
-                <p class="text-xs font-medium text-neonBlue uppercase tracking-wider font-tech">Python Programming Intern</p>
-                <p class="text-xs text-gray-400 leading-relaxed">
-                    Completed a one-month Python programming internship, gaining hands-on experience in coding, debugging, and project development.
-                </p>
-            </div>
-        </div>
-    </section>
+      <p class="text-gray-400 max-w-md text-sm md:text-base leading-relaxed">
+        Passionate Robotics and Automation Engineering graduate with proven experience designing intelligent hardware systems, implementing autonomous navigation, and building AI-driven computer vision solutions. Adept at physical CAD design, kinematic simulation, and hardware-software integration.
+      </p>
 
-    <section id="certificates" class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-        <div class="space-y-6">
-            <div class="border-l-2 border-neonBlue pl-4">
-                <h2 class="text-xl font-bold font-tech text-white">Certifications</h2>
-            </div>
-            <div class="grid gap-4">
-                <div class="bg-cardDark border border-gray-900 p-4 rounded-xl flex items-center space-x-4">
-                    <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonBlue">
-                        <i class="fa-solid fa-award text-lg"></i>
-                    </div>
-                    <span class="text-sm text-gray-300 font-medium">Automotive Industrial Engineering</span>
-                </div>
-                <div class="bg-cardDark border border-gray-900 p-4 rounded-xl flex items-center space-x-4">
-                    <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonPurple">
-                        <i class="fa-solid fa-award text-lg"></i>
-                    </div>
-                    <span class="text-sm text-gray-300 font-medium">CASPRO Sheet Metal Design Mastery</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="space-y-6">
-            <div class="border-l-2 border-neonPurple pl-4">
-                <h2 class="text-xl font-bold font-tech text-white">Hobbies & Intrests</h2>
-            </div>
-            <div class="flex flex-wrap gap-2 pt-2">
-                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-futbol mr-2 text-neonBlue"></i>Football</span>
-                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-medal mr-2 text-neonPurple"></i>Sports</span>
-                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-book mr-2 text-neonBlue"></i>Reading Novels</span>
-                <span class="px-3 py-1.5 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400"><i class="fa-solid fa-microchip mr-2 text-neonPurple"></i>Technical Research</span>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-20 border-t border-gray-950 px-6 max-w-6xl mx-auto text-center space-y-6 relative z-10">
-        <h3 class="text-2xl font-bold font-tech text-white">Let's start something great together</h3>
-        
-        <div class="max-w-md mx-auto space-y-3 font-mono text-xs text-gray-400 bg-cardDark/60 p-6 rounded-2xl border border-gray-900">
-            <p><i class="fa-solid fa-envelope text-neonBlue mr-2"></i> mohammedasad1613@gmail.com</p>
-            <p><i class="fa-solid fa-phone text-neonPurple mr-2"></i> +91-8217394879</p>
-            <p><i class="fa-solid fa-location-dot text-neonBlue mr-2"></i> Mangaluru, Karnataka, India</p>
-            <div class="flex justify-center space-x-4 pt-4 border-t border-gray-900 mt-4">
-                <a href="https://linkedin.com/in/mohammed-asad-ilias-shaikh-98277b26a" target="_blank" class="text-gray-500 hover:text-white transition-colors text-base"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://grabcad.com/mohammed.asad.ilias.shaikh-1" target="_blank" class="text-gray-500 hover:text-white transition-colors text-base"><i class="fa-solid fa-cubes"></i></a>
-            </div>
-        </div>
-
-        <a href="mailto:mohammedasad1613@gmail.com" class="inline-block px-8 py-3 bg-neonBlue hover:bg-blue-600 font-bold font-tech text-xs tracking-widest text-white rounded-lg transition-all uppercase shadow-md">
-            Get in touch
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="Asad Rsume IND.pdf" target="_blank" rel="noopener" class="press-3d px-6 py-3 bg-neonBlue hover:bg-blue-600 text-white rounded-lg font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-2">
+          <i class="fa-solid fa-file-arrow-down"></i> Download CV
         </a>
-        <p class="text-xs text-gray-600 font-mono pt-8">&copy; 2026 Mohammed Asad Ilias Shaikh. Executed via pure atomic code parameters.</p>
-    </footer>
+        <a href="#projects" class="press-3d px-6 py-3 bg-cardDark border border-gray-800 hover:border-gray-700 text-white rounded-lg font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-2">
+          <i class="fa-solid fa-folder-open text-neonPurple"></i> View Projects
+        </a>
+      </div>
 
-    <script>
-        function showSkill(name, details) {
-            document.getElementById('skill-title').innerText = name;
-            document.getElementById('skill-details').innerText = details;
+      <div class="grid grid-cols-3 gap-3 pt-6 max-w-md font-mono">
+        <div class="console px-3 py-3 text-center">
+          <div class="text-lg font-bold text-white"><i class="fa-solid fa-graduation-cap text-xs text-neonBlue mr-1"></i>8.44</div>
+          <div class="text-[9px] text-gray-500 uppercase tracking-wide">CGPA</div>
+        </div>
+        <div class="console px-3 py-3 text-center">
+          <div class="text-lg font-bold text-white"><i class="fa-solid fa-diagram-project text-xs text-neonPurple mr-1"></i>4+</div>
+          <div class="text-[9px] text-gray-500 uppercase tracking-wide">Projects</div>
+        </div>
+        <div class="console px-3 py-3 text-center">
+          <div class="text-lg font-bold text-white"><i class="fa-solid fa-calendar-check text-xs text-neonBlue mr-1"></i>2026</div>
+          <div class="text-[9px] text-gray-500 uppercase tracking-wide">Graduate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 flex justify-center relative" style="perspective:1000px;">
+      <div class="absolute inset-0 purple-splash rounded-full scale-110 pointer-events-none animate-pulse"></div>
+      <div class="w-80 h-80 bg-neonPurple-40 rounded-full mix-blend-screen filter blur-xl absolute opacity-70"></div>
+      <img src="Asadpro.jpg" alt="Portrait of Mohammed Asad Ilias Shaikh" loading="eager" class="tilt-card w-72 h-72 object-cover relative z-10 border-4 border-neonPurple-20 rounded-2xl shadow-2xl">
+      <div class="absolute -bottom-3 right-4 z-20 console px-3 py-2 flex items-center gap-2 text-[10px] font-mono text-gray-300">
+        <i class="fa-solid fa-location-dot text-neonBlue"></i> Mangaluru, India
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME MANIFEST -->
+<section id="about" class="py-24 px-6 max-w-4xl mx-auto reveal">
+  <div class="text-center space-y-2 mb-12">
+    <span class="text-[10px] font-mono text-neonBlue uppercase tracking-widest"> </span>
+    <h2 class="text-3xl font-bold font-tech text-white">About Me</h2>
+  </div>
+
+  <div class="console">
+    <div class="console-bar">
+      <span class="dot bg-red-500-70"></span>
+      <span class="dot bg-yellow-500-70"></span>
+      <span class="dot bg-green-500-70"></span>
+      <span class="text-[11px] text-gray-500 font-mono pl-4"><i class="fa-solid fa-file-code text-neonPurple mr-1.5"></i>INTRODUCTION</span>
+    </div>
+    <div class="p-6 font-mono text-xs md:text-sm text-gray-400 space-y-4 leading-relaxed">
+      <p><span class="text-neonPurple">&gt; Introducing Myself:</span></p>
+      <p class="pl-4 text-gray-300">
+        Passionate Robotics and Automation Engineering graduate with proven experience designing intelligent hardware systems, implementing autonomous navigation, and building AI-driven computer vision solutions. Adept at physical CAD design, kinematic simulation, and hardware-software integration.
+      </p>
+      <p><span class="text-neonBlue">&gt; academic_history:</span></p>
+      <div class="pl-4 text-xs space-y-2">
+        <div class="flex items-start gap-2">
+          <i class="fa-solid fa-chevron-right text-[10px] text-neonPurple mt-1"></i>
+          <div>
+            <strong>Bachelor of Engineering (B.E.) in Robotics and Automation Engineering</strong><br>
+            <span class="text-gray-500">Sahyadri College of Engineering and Management (Graduation: 2026)</span> &mdash; <span class="text-emerald-400 font-bold">CGPA: 8.44</span>[cite: 2]
+          </div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fa-solid fa-chevron-right text-[10px] text-neonPurple mt-1"></i>
+          <div>
+            <strong>Pre-University Education</strong><br>
+            <span class="text-gray-500">St Aloysius PUC (Completed: 2022)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS CORE NODE MAP -->
+<section id="skills" class="py-24 px-6 max-w-5xl mx-auto reveal">
+  <div class="border-l-2 border-neonBlue pl-4 mb-12">
+    <span class="text-[10px] font-mono text-neonBlue uppercase tracking-widest"></span>
+    <h2 class="text-2xl font-bold font-tech text-white">My Skills</h2>
+    <p class="text-xs text-gray-500">Select a node on the network map to inspect its competencies.</p>
+  </div>
+
+  <div class="grid md:grid-cols-12 gap-8 items-stretch" style="perspective:900px;">
+    <div class="md:col-span-7 console tilt-card flex justify-center items-center p-4">
+      <svg width="400" height="300" viewBox="0 0 400 300" class="w-full h-auto" id="skills-svg" role="img" aria-label="Skill network diagram">
+        <line x1="50" y1="150" x2="150" y2="70" class="node-line" id="line-0" />
+        <line x1="50" y1="150" x2="150" y2="220" class="node-line" id="line-1" />
+        <line x1="150" y1="70" x2="280" y2="70" class="node-line" id="line-2" />
+        <line x1="150" y1="220" x2="280" y2="220" class="node-line" id="line-3" />
+        <line x1="280" y1="70" x2="350" y2="150" class="node-line" id="line-4" />
+        <line x1="280" y1="220" x2="350" y2="150" class="node-line" id="line-5" />
+
+        <circle cx="50" cy="150" r="14" tabindex="0" class="node-circle" data-idx="0"
+          data-title="Robotics & Simulation" data-icon="fa-solid fa-gamepad" data-details="CoppeliaSim, Gazebo, Kinematics, Path Planning" />
+        <text x="50" y="180" text-anchor="middle" class="node-label">Robotics</text>
+
+        <circle cx="150" cy="70" r="14" tabindex="0" class="node-circle purple" data-idx="1"
+          data-title="AI & Computer Vision" data-icon="fa-solid fa-eye" data-details="OpenCV, LLM Integration (Ollama, LangChain)" />
+        <text x="150" y="50" text-anchor="middle" class="node-label">AI / CV</text>
+
+        <circle cx="150" cy="220" r="14" tabindex="0" class="node-circle" data-idx="2"
+          data-title="CAD & Hardware" data-details="SolidWorks, Fusion 360, 3D Printing, Prototyping" data-icon="fa-solid fa-compass-drafting" />
+        <text x="150" y="250" text-anchor="middle" class="node-label">CAD</text>
+
+        <circle cx="280" cy="70" r="14" tabindex="0" class="node-circle" data-idx="3"
+          data-title="Embedded Systems" data-details="Python, Arduino, Raspberry Pi, Software Debugging" data-icon="fa-solid fa-microchip" />
+        <text x="280" y="50" text-anchor="middle" class="node-label">Embedded</text>
+
+        <circle cx="280" cy="220" r="14" tabindex="0" class="node-circle purple" data-idx="4"
+          data-title="Automation Stack" data-details="Microsoft Power Apps, Power Automate, SharePoint" data-icon="fa-solid fa-gears" />
+        <text x="280" y="250" text-anchor="middle" class="node-label">Automation</text>
+
+        <circle cx="350" cy="150" r="14" tabindex="0" class="node-circle" data-idx="5"
+          data-title="Core Engineering Math" data-details="Forward & Inverse Kinematics Analysis, Space Navigation Dynamics" data-icon="fa-solid fa-calculator" />
+        <text x="350" y="180" text-anchor="middle" class="node-label">Math</text>
+      </svg>
+    </div>
+
+    <div class="md:col-span-5 console p-8 text-center space-y-4 flex flex-col justify-center" aria-live="polite">
+      <div id="skill-icon-container" class="w-12 h-12 rounded-full bg-gray-950 border border-gray-800 flex items-center justify-center text-neonPurple text-xl mx-auto shadow-inner">
+        <i class="fa-solid fa-gamepad" id="skill-icon"></i>
+      </div>
+      <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">System Diagnostics</span>
+      <h3 id="skill-title" class="text-xl font-bold font-tech text-white">Robotics & Simulation</h3>
+      <p id="skill-details" class="text-xs text-gray-400 font-mono leading-relaxed">
+        CoppeliaSim, Gazebo, Kinematics, Path Planning
+      </p>
+      <div class="pt-2 text-[10px] font-mono text-gray-600 border-t border-gray-900" id="skill-index-tracker">Node 1 / 6</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 px-6 max-w-6xl mx-auto reveal">
+  <div class="border-l-2 border-neonPurple pl-4 mb-8">
+    <span class="text-[10px] font-mono text-neonPurple uppercase tracking-widest"></span>
+    <h2 class="text-2xl font-bold font-tech text-white">Projects</h2>
+    <p class="text-xs text-gray-500">Engineering documentation verified across simulations and deployed hardware stacks.</p>
+  </div>
+
+  <div class="flex flex-wrap gap-2 mb-10" id="project-filters">
+    <button class="filter-btn active px-3 py-1.5 rounded-full text-[11px] font-mono border border-gray-800 text-gray-300" data-filter="all"><i class="fa-solid fa-border-all mr-1.5"></i>All</button>
+    <button class="filter-btn px-3 py-1.5 rounded-full text-[11px] font-mono border border-gray-800 text-gray-300" data-filter="Python"><i class="fa-brands fa-python mr-1.5"></i>Python</button>
+    <button class="filter-btn px-3 py-1.5 rounded-full text-[11px] font-mono border border-gray-800 text-gray-300" data-filter="CoppeliaSim"><i class="fa-solid fa-cubes mr-1.5"></i>CoppeliaSim</button>
+    <button class="filter-btn px-3 py-1.5 rounded-full text-[11px] font-mono border border-gray-800 text-gray-300" data-filter="OpenCV"><i class="fa-solid fa-eye mr-1.5"></i>Computer Vision</button>
+    <button class="filter-btn px-3 py-1.5 rounded-full text-[11px] font-mono border border-gray-800 text-gray-300" data-filter="PowerApps"><i class="fa-solid fa-gears mr-1.5"></i>Automation</button>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8" id="project-grid">
+
+    <!-- Project 1 -->
+    <article class="project-card console flex flex-col justify-between transition-transform hover:-translate-y-1" data-tags="Python,OpenCV,CoppeliaSim,RaspberryPi">
+      <img src="fishsorting.png" alt="Automated Fish Sorting System" loading="lazy" class="w-full h-48 object-cover">
+      <div class="p-6 space-y-4 flex flex-col flex-1">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-fish text-neonBlue text-lg"></i> Automated Fish Sorting System Using CV &amp; AI</h3>
+        <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1 flex-1">
+          <li>Co-developed an AI machine leveraging integrated real-time computer vision algorithms for completely automated, time-efficient aquaculture processing.</li>
+          <li>Programmed custom object detection and classification scripts configured for localized deployment on an embedded Raspberry Pi platform.</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+          <span>#Python</span><span>#OpenCV</span><span>#CoppeliaSim</span><span>#RaspberryPi</span>
+        </div>
+        <button class="view-details mt-2 text-[11px] font-mono uppercase tracking-wide text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg px-4 py-2 self-start transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart"></i> View Details</button>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-card console flex flex-col justify-between transition-transform hover:-translate-y-1" data-tags="Python,CoppeliaSim">
+      <img src="llmrobo.png" alt="Language-Guided Navigator" loading="lazy" class="w-full h-48 object-cover">
+      <div class="p-6 space-y-4 flex flex-col flex-1">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-brain text-neonPurple text-lg"></i> Language-Guided Autonomous Navigator</h3>
+        <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1 flex-1">
+          <li>Engineered an autonomous software agent that processes natural language instructions into execute-ready navigation paths within simulated robotics spaces.</li>
+          <li>Integrated local Large Language Models via Ollama with CoppeliaSim to successfully map complex, multi-step natural human intent to direct robot operations.</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+          <span>#Python</span><span>#Ollama</span><span>#LangChain</span><span>#CoppeliaSim</span>
+        </div>
+        <button class="view-details mt-2 text-[11px] font-mono uppercase tracking-wide text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg px-4 py-2 self-start transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart"></i> View Details</button>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project-card console flex flex-col justify-between transition-transform hover:-translate-y-1" data-tags="Python,CoppeliaSim">
+      <img src="Scara.png" alt="SCARA Robotic Arm" loading="lazy" class="w-full h-48 object-cover">
+      <div class="p-6 space-y-4 flex flex-col flex-1">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-hand-holding-hand text-neonBlue text-lg"></i> SCARA Robotic Arm Manipulator</h3>
+        <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1 flex-1">
+          <li>Formulated and programmed the exact mathematical forward and inverse kinematics algorithms to achieve ultra-precise trajectories.</li>
+          <li>Synchronized simulated kinematic path nodes smoothly with micro-controlled Arduino hardware systems to optimize pick-and-place precision.</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+          <span>#Python</span><span>#CoppeliaSim</span><span>#ArduinoHardware</span>
+        </div>
+        <button class="view-details mt-2 text-[11px] font-mono uppercase tracking-wide text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg px-4 py-2 self-start transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart"></i> View Details</button>
+      </div>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project-card console flex flex-col justify-between transition-transform hover:-translate-y-1" data-tags="PowerApps">
+      <img src="hotelmanage.png" alt="Hotel Booking Management" loading="lazy" class="w-full h-48 object-cover">
+      <div class="p-6 space-y-4 flex flex-col flex-1">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="fa-solid fa-hotel text-neonPurple text-lg"></i> Hotel Booking Management Automation</h3>
+        <ul class="text-xs text-gray-400 list-disc pl-4 space-y-1 flex-1">
+          <li>Designed and deployed responsive data portals containing automated multi-level database approvals and deep-linked email reminders.</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue pt-2">
+          <span>#PowerApps</span><span>#PowerAutomate</span><span>#SharePoint</span>
+        </div>
+        <button class="view-details mt-2 text-[11px] font-mono uppercase tracking-wide text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg px-4 py-2 self-start transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart"></i> View Details</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-24 px-6 max-w-4xl mx-auto reveal">
+  <div class="border-l-2 border-neonBlue pl-4 mb-12">
+    <span class="text-[10px] font-mono text-neonBlue uppercase tracking-widest"></span>
+    <h2 class="text-2xl font-bold font-tech text-white">Work Experience</h2>
+  </div>
+
+  <div class="space-y-12 font-sans">
+    <div class="border-l border-gray-800 pl-6 relative space-y-2 reveal">
+      <div class="absolute w-3 h-3 bg-neonBlue rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
+      <div class="flex flex-wrap justify-between items-center text-sm">
+        <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-building-intellectual text-neonBlue mr-2 text-base"></i>Novigo Solutions</h3>
+        <span class="text-xs font-mono text-gray-500"><i class="fa-regular fa-calendar-days mr-1"></i> Jan 2026 – Apr 2026 | Mangaluru, India</span>
+      </div>
+      <p class="text-xs font-medium text-neonPurple uppercase tracking-wider font-tech"><i class="fa-solid fa-gears mr-1.5"></i>Power Apps Intern</p>
+      <p class="text-xs text-gray-400 leading-relaxed">
+        Completed an internship at Novigo Solutions, focusing on developing business applications using Microsoft PowerApps and Power Automate. Gaining hands-on experience in automation, data integration, and real-world application development.
+      </p>
+    </div>
+
+    <div class="border-l border-gray-800 pl-6 relative space-y-2 reveal">
+      <div class="absolute w-3 h-3 bg-neonPurple rounded-full -left-[7px] top-1.5 border-2 border-midnight"></div>
+      <div class="flex flex-wrap justify-between items-center text-sm">
+        <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-laptop-code text-neonPurple mr-2 text-base"></i>Oasis Infobyte</h3>
+        <span class="text-xs font-mono text-gray-500"><i class="fa-regular fa-calendar-days mr-1"></i> Aug 2025 – Sept 2025 | Remote</span>
+      </div>
+      <p class="text-xs font-medium text-neonBlue uppercase tracking-wider font-tech"><i class="fa-brands fa-python mr-1.5"></i>Python Programming Intern</p>
+      <p class="text-xs text-gray-400 leading-relaxed">
+        Completed a one-month Python programming internship, gaining hands-on experience in coding, debugging, and project development.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES & HOBBIES -->
+<section id="certificates" class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 reveal">
+  <div class="space-y-6">
+    <div class="border-l-2 border-neonBlue pl-4">
+      <span class="text-[10px] font-mono text-neonBlue uppercase tracking-widest"></span>
+      <h2 class="text-xl font-bold font-tech text-white">Certifications</h2>
+    </div>
+    <div class="grid gap-4">
+      <div class="console p-4 flex items-center space-x-4 hover:shadow-glowBlue transition-shadow">
+        <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonBlue shadow-inner">
+          <i class="fa-solid fa-car-battery text-lg"></i>
+        </div>
+        <span class="text-sm text-gray-300 font-medium">Automotive Industrial Engineering</span>
+      </div>
+      <div class="console p-4 flex items-center space-x-4 hover:shadow-glowPurple transition-shadow">
+        <div class="p-3 bg-midnight border border-gray-800 rounded-lg text-neonPurple shadow-inner">
+          <i class="fa-solid fa-bezier-curve text-lg"></i>
+        </div>
+        <span class="text-sm text-gray-300 font-medium">CASPRO Sheet Metal Design Mastery</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-6">
+    <div class="border-l-2 border-neonPurple pl-4">
+      <span class="text-[10px] font-mono text-neonPurple uppercase tracking-widest"></span>
+      <h2 class="text-xl font-bold font-tech text-white">Hobbies &amp; Interests</h2>
+    </div>
+    <div class="flex flex-wrap gap-3 pt-2">
+      <span class="px-4 py-2 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400 shadow-sm transition-colors hover:border-neonBlue"><i class="fa-solid fa-futbol mr-2 text-neonBlue"></i>Football</span>
+      <span class="px-4 py-2 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400 shadow-sm transition-colors hover:border-neonPurple"><i class="fa-solid fa-medal mr-2 text-neonPurple"></i>Sports</span>
+      <span class="px-4 py-2 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400 shadow-sm transition-colors hover:border-neonBlue"><i class="fa-solid fa-book mr-2 text-neonBlue"></i>Reading Novels</span>
+      <span class="px-4 py-2 bg-cardDark border border-gray-900 rounded-full text-xs font-mono text-gray-400 shadow-sm transition-colors hover:border-neonPurple"><i class="fa-solid fa-microchip mr-2 text-neonPurple"></i>Technical Research</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="py-20 border-t border-gray-950 px-6 max-w-6xl mx-auto relative z-10 reveal">
+  <div class="text-center space-y-3 mb-10">
+    <span class="text-[10px] font-mono text-neonBlue uppercase tracking-widest"></span>
+    <h3 class="text-2xl font-bold font-tech text-white">Let's start something great together</h3>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div class="console p-6 space-y-4 font-mono text-xs text-gray-400 flex flex-col justify-between">
+      <div class="space-y-4">
+        <button class="copy-field flex items-center justify-between w-full text-left bg-gray-950 border border-gray-900 px-3 py-2.5 rounded-lg hover:text-white transition-colors" data-copy="mohammedasad1613@gmail.com">
+          <span><i class="fa-solid fa-envelope text-neonBlue mr-2"></i> mohammedasad1613@gmail.com</span>
+          <i class="fa-regular fa-copy text-gray-600"></i>
+        </button>
+        <button class="copy-field flex items-center justify-between w-full text-left bg-gray-950 border border-gray-900 px-3 py-2.5 rounded-lg hover:text-white transition-colors" data-copy="+91-8217394879">
+          <span><i class="fa-solid fa-phone text-neonPurple mr-2"></i> +91-8217394879</span>
+          <i class="fa-regular fa-copy text-gray-600"></i>
+        </button>
+        <div class="flex items-center bg-gray-950 border border-gray-900 px-3 py-2.5 rounded-lg">
+          <p><i class="fa-solid fa-location-dot text-neonBlue mr-2"></i> Mangaluru, Karnataka, India</p>
+        </div>
+      </div>
+      <div class="flex space-x-3 pt-4 border-t border-gray-900 mt-4 justify-center md:justify-start">
+        <a href="https://linkedin.com/in/mohammed-asad-ilias-shaikh-98277b26a" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-10 h-10 bg-gray-950 border border-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-neonBlue transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+        <a href="https://grabcad.com/mohammed.asad.ilias.shaikh-1" target="_blank" rel="noopener" aria-label="GrabCAD profile" class="w-10 h-10 bg-gray-950 border border-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-neonPurple transition-all"><i class="fa-solid fa-cubes text-sm"></i></a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="console p-6 space-y-3">
+      <label class="block text-[10px] font-mono text-gray-500 uppercase tracking-widest" for="msg-subject"><i class="fa-solid fa-heading text-[9px] mr-1"></i> Subject</label>
+      <input id="msg-subject" type="text" required placeholder="Job opportunity, collaboration..." class="w-full bg-midnight border border-gray-800 rounded-lg px-3 py-2 text-xs text-gray-200 focus:border-neonPurple outline-none transition-colors">
+
+      <label class="block text-[10px] font-mono text-gray-500 uppercase tracking-widest" for="msg-body"><i class="fa-solid fa-comment-dots text-[9px] mr-1"></i> Message</label>
+      <textarea id="msg-body" required rows="3" placeholder="Say hello..." class="w-full bg-midnight border border-gray-800 rounded-lg px-3 py-2 text-xs text-gray-200 focus:border-neonPurple outline-none resize-none transition-colors"></textarea>
+
+      <button type="submit" class="press-3d w-full mt-1 px-4 py-2.5 bg-neonPurple hover:bg-purple-600 text-white rounded-lg font-semibold text-xs tracking-wider uppercase inline-flex items-center justify-center gap-2"><i class="fa-solid fa-paper-plane"></i> Send via Email</button>
+    </form>
+  </div>
+
+  <p class="text-xs text-gray-600 font-mono pt-12 text-center">&copy; 2026 Mohammed Asad Ilias Shaikh. Deployed via pure atomic parameters.</p>
+</footer>
+
+</main>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-neonPurple hover:bg-purple-600 text-white shadow-glowPurple flex items-center justify-center">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div id="toast" class="fixed bottom-6 left-6 z-40 bg-cardDark border border-gray-800 text-xs text-gray-200 font-mono px-4 py-2 rounded-lg" role="status" aria-live="polite"></div>
+
+<!-- Modal Structure -->
+<div id="project-modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black-70 px-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="console max-w-lg w-full max-h-[85vh] overflow-y-auto">
+    <div class="console-bar justify-between">
+      <div class="flex items-center gap-2">
+        <span class="dot bg-red-500-70"></span><span class="dot bg-yellow-500-70"></span><span class="dot bg-green-500-70"></span>
+        <span class="text-[11px] text-gray-500 font-mono pl-4"><i class="fa-solid fa-square-poll-vertical text-neonBlue mr-1.5"></i>project_details.log</span>
+      </div>
+      <button id="modal-close" aria-label="Close" class="text-gray-500 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="p-6 space-y-4">
+      <img id="modal-img" src="" alt="" class="w-full h-48 object-cover rounded-lg">
+      <h3 id="modal-title" class="text-xl font-bold text-white font-tech"></h3>
+      <ul id="modal-list" class="text-xs text-gray-400 list-disc pl-4 space-y-2"></ul>
+      <div id="modal-tags" class="flex flex-wrap gap-2 text-[10px] font-mono text-neonBlue"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// FIXED: High-Performance Interactive Skills Node Graph Engine
+document.addEventListener("DOMContentLoaded", () => {
+  const skillTitle = document.getElementById('skill-title');
+  const skillDetails = document.getElementById('skill-details');
+  const skillIcon = document.getElementById('skill-icon');
+  const tracker = document.getElementById('skill-index-tracker');
+  const nodes = document.querySelectorAll('.node-circle');
+
+  function selectNode(node) {
+    // Correctly clear and assign layout states using data model parameters
+    nodes.forEach(n => n.setAttribute('data-active', 'false'));
+    node.setAttribute('data-active', 'true');
+    
+    // Extract using dataset mapping rules safely
+    skillTitle.textContent = node.dataset.title;
+    skillDetails.textContent = node.dataset.details;
+    
+    const currentIdx = parseInt(node.dataset.idx) + 1;
+    tracker.textContent = `Node ${currentIdx} / 6`;
+    
+    if (node.dataset.icon) {
+      skillIcon.className = node.dataset.icon;
+    }
+  }
+
+  nodes.forEach((node) => {
+    node.addEventListener('click', () => selectNode(node));
+    node.addEventListener('keydown', (e) => { 
+      if (e.key === 'Enter' || e.key === ' ') { 
+        e.preventDefault(); 
+        selectNode(node); 
+      } 
+    });
+  });
+
+  // Default activation loop sequence parameters
+  if (nodes[0]) selectNode(nodes[0]);
+});
+
+// UPGRADE: Real 3D Coordinate Projection Space Particle Backdrop
+(function() {
+  const canvas = document.getElementById("three-bg-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+  let points3D = [];
+  const numPoints = 120;
+  const fieldOfView = 250; // Camera perspective mapping constant
+  
+  let mouseX = 0, mouseY = 0;
+  let targetMouseX = 0, targetMouseY = 0;
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  window.addEventListener("pointermove", (e) => {
+    targetMouseX = (e.clientX - w / 2) * 0.08;
+    targetMouseY = (e.clientY - h / 2) * 0.08;
+  });
+
+  // Populate true dimensional 3D coordinates array matrix
+  for(let i = 0; i < numPoints; i++) {
+    points3D.push({
+      x: (Math.random() - 0.5) * 1000,
+      y: (Math.random() - 0.5) * 1000,
+      z: Math.random() * 800 + 100, // Z depth value vector
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      vz: -0.8 // Forward spatial velocity vector parameter
+    });
+  }
+
+  function render3DBackground() {
+    ctx.fillStyle = "#060913";
+    ctx.fillRect(0, 0, w, h);
+    
+    // Smooth frame interpolations for camera tracking effects
+    mouseX += (targetMouseX - mouseX) * 0.05;
+    mouseY += (targetMouseY - mouseY) * 0.05;
+    
+    points3D.forEach(p => {
+      // Apply linear velocity loops across dimensional space axes
+      p.x += p.vx;
+      p.y += p.vy;
+      p.z += p.vz;
+      
+      // Recycle nodes once clipping depth threshold parameter passes bounds
+      if(p.z <= 0) {
+        p.z = 800;
+        p.x = (Math.random() - 0.5) * 1000;
+        p.y = (Math.random() - 0.5) * 1000;
+      }
+      
+      // Compute spatial 3D to 2D screen coordinate projection equations
+      // Formula: Perspective Projection Matrix mapping
+      const perspectiveScale = fieldOfView / p.z;
+      const screenX = (p.x + mouseX) * perspectiveScale + w / 2;
+      const screenY = (p.y + mouseY) * perspectiveScale + h / 2;
+      const particleRadius = Math.max(0.2, perspectiveScale * 1.5);
+      
+      // Render coordinate mapping node nodes inside frame context borders
+      if(screenX >= 0 && screenX <= w && screenY >= 0 && screenY <= h) {
+        ctx.beginPath();
+        ctx.arc(screenX, screenY, particleRadius, 0, Math.PI * 2);
+        
+        // Color variance depending on mathematical proximity tracking logic layers
+        if (p.z < 300) {
+          ctx.fillStyle = `rgba(139, 92, 246, ${1 - p.z / 300})`;
+        } else {
+          ctx.fillStyle = `rgba(59, 130, 246, ${Math.max(0.05, 1 - p.z / 800)})`;
         }
-    </script>
+        ctx.fill();
+      }
+    });
+    
+    requestAnimationFrame(render3DBackground);
+  }
+  render3DBackground();
+})();
+
+// Structural layout controllers
+try {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+  });
+} catch(e){}
+
+try {
+  const progressEl = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progressEl.style.setProperty('--scroll', scrolled + '%');
+    backToTop.classList.toggle('show', h.scrollTop > 500);
+  }, { passive: true });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+} catch (e) {}
+
+try {
+  const roles = ['Robotics Engineer', 'Automation Specialist', 'Computer Vision Developer', 'Hardware-Software Integrator'];
+  const twEl = document.getElementById('typewriter');
+  let ri = 0, ci = 0, deleting = false;
+  function typeLoop() {
+    const current = roles[ri];
+    if (!deleting) {
+      ci++;
+      twEl.innerHTML = current.slice(0, ci) + '<span class="caret">&nbsp;</span>';
+      if (ci === current.length) { deleting = true; setTimeout(typeLoop, 1400); return; }
+    } else {
+      ci--;
+      twEl.innerHTML = current.slice(0, ci) + '<span class="caret">&nbsp;</span>';
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(typeLoop, deleting ? 35 : 65);
+  }
+  typeLoop();
+} catch (e) {}
+
+try {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      projectCards.forEach(card => {
+        card.style.display = (f === 'all' || card.dataset.tags.includes(f)) ? '' : 'none';
+      });
+    });
+  });
+} catch (e) {}
+
+try {
+  const modal = document.getElementById('project-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalTitle = document.getElementById('modal-title');
+  const modalList = document.getElementById('modal-list');
+  const modalTags = document.getElementById('modal-tags');
+
+  document.querySelectorAll('.view-details').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.project-card');
+      modalImg.src = card.querySelector('img').src;
+      modalImg.alt = card.querySelector('img').alt;
+      modalTitle.textContent = card.querySelector('h3').textContent;
+      modalList.innerHTML = card.querySelector('ul').innerHTML;
+      modalTags.innerHTML = card.querySelector('.text-neonBlue').innerHTML;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+} catch (e) {}
+
+try {
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('.copy-field').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const val = btn.dataset.copy;
+      await navigator.clipboard.writeText(val);
+      toast.textContent = 'Copied to Clipboard: ' + val;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1800);
+    });
+  });
+} catch (e) {}
+
+try {
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const subject = document.getElementById('msg-subject').value.trim();
+    const body = document.getElementById('msg-body').value.trim();
+    window.location.href = `mailto:mohammedasad1613@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+} catch (e) {}
+
+// Structural card tilt dynamics mapping layers
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function enableTilt(selector, max) {
+    document.querySelectorAll(selector).forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'touch') return;
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY - r.top) / r.height - 0.5) * -2 * max;
+        const ry = ((e.clientX - r.left) / r.width - 0.5) * 2 * max;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+      });
+      card.addEventListener('pointerleave', () => card.style.transform = '');
+    });
+  }
+  enableTilt('.project-card', 6);
+  enableTilt('.tilt-card', 8);
+})();
+</script>
 </body>
 </html>
